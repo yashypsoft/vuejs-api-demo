@@ -25,7 +25,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    {src:'~/plugins/api/todo.js'}
+    { src: '~/plugins/api/todo.js' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -39,7 +39,19 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/apollo',
+    '@nuxtjs/axios'
   ],
+  apollo: {
+    clients: {
+      default: {
+        httpEndpoint: 'https://rickandmortyapi.com/graphql/'
+      }
+    },
+  },
+  axios: {
+    // proxy: true
+  },
 
   // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
   vuetify: {

@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "export NODE_OPTIONS=--openssl-legacy-provider && nuxt",
+    "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
   },
   "dependencies": {
     "@apollo/server": "^4.3.2",
+    "@nuxtjs/axios": "^5.13.6",
     "core-js": "^3.25.3",
     "graphql": "^16.6.0",
     "nuxt": "^2.15.8",
