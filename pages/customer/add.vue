@@ -2,7 +2,8 @@
   <div>
     <h1>Add customer</h1>
     <v-btn @click="getTodos()">Submit</v-btn>
-    <!-- {{ todo }} -->
+    <v-btn @click="getCustomer()">Submit GQL</v-btn>
+    {{ todo }}
   </div>
 </template>
 
@@ -14,10 +15,15 @@ export default {
     getTodos() {
       this.$store.dispatch("todo/getTodos");
     },
+    getCustomer() {
+      this.$store.dispatch("todo/getCustomer");
+    },
   },
   computed:{
-    ...mapState(['todo','todoList'])
-      // todo: state => state.todo.todoList
+    ...mapState(['todo'])
+      // ...mapState({
+      //   todo: state => state.todo.todoList
+      // })
   },
   updated(){
     console.log(this.$store.state.todo.todoList);

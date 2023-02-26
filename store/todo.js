@@ -1,12 +1,15 @@
-const state = () => {
+const state = () => ({
   todoList:[]
-}
+})
 
 const actions = {
   async getTodos({commit}){
-    await fetch('https://jsonplaceholder.typicode.com/todos')
-      .then(response => response.json())
-      .then(json => commit('setTodos',json));
+    this.$todoAPI.getTodos().then(
+      (data)=> commit('setTodos',data)
+    );
+  },
+  async getCustomer({commit}){
+    this.$todoAPI.getCustomer();
   }
 }
 
